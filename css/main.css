@@ -1,0 +1,264 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root{
+    --height:140px;
+    --position:10%;
+}
+
+*{margin: 0;padding: 0;}
+li{list-style: none;}
+a{
+    text-decoration: none;
+    display: block;
+    color: inherit;
+    transition: .3s;
+}
+div, ul{transition: .3s;}
+img{display: block;}
+
+#wrap{padding-top:var(--height);}
+
+.burger{
+    width: 32px;height: 32px;
+    position: fixed;
+    left:34px; top: 34px;
+    z-index: 99999999;
+    display: none;
+}
+.burger li{
+    height: 4px;background: #ccc;
+    position: relative; opacity: 1;
+    transition: .3s;
+}
+.burger li:nth-child(2){top:10px;}
+.burger li:nth-child(3){top:6px;}
+.burger li:nth-child(4){top:16px;}
+
+.burger.on li:nth-child(1){opacity: 0;}
+.burger.on li:nth-child(4){opacity: 0;}
+.burger.on li:nth-child(2){
+    transform: rotate(45deg);
+}
+.burger.on li:nth-child(3){
+    transform: rotate(-45deg);
+}
+
+.bur_gnb{
+    position: fixed;
+    top:100px;
+    left: -250px; 
+    z-index: 999999; 
+    width: 250px; 
+    background: rgba(255,255,255,.8);
+    transition: .3s;
+}
+.bur_gnb.on{
+    left: 0;
+}
+.bur_gnb a{
+    line-height: 60px;
+    padding-left: 20px;
+    font-size: 1.2rem;
+}
+.bur_gnb a:hover{
+    background: #faa;
+}
+
+
+.w_ref{
+    position: absolute;
+    top:0; left: 0; 
+    z-index: 10;
+}
+.refresh{
+    position:sticky;
+    top:80vh;
+    margin-left:90vw; 
+    margin-bottom: 30px;
+    z-index: 10;
+    display: none;
+}
+.refresh.on{
+    display: block;
+}
+.refresh i{
+    font-size: 3rem;
+    color: #fff;
+    text-shadow: 0px 0px 3px #777;
+}
+
+#header{
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: var(--height);
+    background: #fff;
+    box-shadow: 0 0 3px #333;
+    z-index: 1000;
+    transition: .3s;
+}
+#header.on{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+#header.on .gnb{width: 60vw;}
+#header.on .logo img{height: 40px;}
+
+#wrap section{position: relative;}
+
+.logo{
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.phone_logo{display: none;}
+.gnb{
+    display: flex;
+    width: 60%;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    font-family: 'Open Sans', sans-serif;
+}
+.gnb a{
+    border-bottom: 2px #fff solid;
+    line-height: 32px;
+    font-size: 1.2rem;
+}
+.gnb a:hover{
+    border-bottom: 2px #f33 solid;
+}
+
+#sec01{
+    height: calc(100vh - var(--height));
+    background: url("../img/230404_코카콜라_뉴진스2_\(NDH\)-1440x900.jpg") center center / cover;
+}
+#sec01 .text{
+    position: absolute;
+    bottom:var(--position);
+    left:var(--position);
+}
+.text{
+    width: 32%;
+    font-family: "Noto Sans Kr";
+    font-size: 1.2rem;
+    color: #fff;
+    text-shadow: 3px 3px 3px #333;
+}
+.text h3{
+    font-size: 2.4rem;
+    font-weight: 900;    
+}
+.view{display: flex;cursor: pointer;}
+.next{padding-left: 5px; transition: .3s;}
+.xi-caret-up-circle-o{
+    transform:rotate(90deg);
+}
+.view:hover .next{padding-left: 10px;}
+
+#sec02{
+    height: calc(100vh - var(--height));
+    background: url("../img/02_Header\ Image\ 02-\(D\)-1440x900.png") center center / cover;
+}
+#sec02 .text{
+    position: absolute;
+    top:var(--position);
+    right:var(--position);    
+}
+#sec03{
+    height: calc(100vh - var(--height));
+    background: url("../img/coca-cola-bottles-\(DH\)-1440x900.png") center center / cover;
+}
+#sec03 .text{
+    position: absolute;
+    top:var(--position);
+    right:var(--position);    
+}
+#sec04{
+    height: calc(100vh - var(--height));
+    background: url("../img/04_Header\ Image\ 04-\(D\)-1440x900.png") center center / cover;
+}
+#sec04 .text{
+    position: absolute;
+    bottom:var(--position);
+    right:var(--position);    
+}
+#sec05{
+    height: calc(100vh - var(--height));
+    background: url("../img/05_Header\ Image\ 05-\(D\)-1440x900.png") center center / cover;
+}
+#sec05 .text{
+    position: absolute;
+    bottom:var(--position);
+    left:var(--position);    
+}
+#footer{
+    background: #555;
+    display: flex; padding: 50px;
+    justify-content: space-between;    
+    color: #fff;
+}
+.copy{
+    line-height: 50px;
+}
+.f_menu a{
+    display: inline-block;
+    padding: 10px;
+}
+.sns ul{
+    display: flex;    
+}
+.sns li{padding: 10px;}
+.sns{
+    display: flex;
+    justify-content: flex-end;
+}
+.sns img{width: 50px;}
+
+
+/* 반응형 max-width:800px */
+@media screen and (max-width:800px){
+    #wrap{padding-top: 100px;}
+    #header{height: 100px;}
+    .burger{
+        display: block;
+        cursor: pointer;
+    }
+    
+    nav{display: none;}
+    
+    .pc_logo{display: none;}
+    .phone_logo{display: block;}
+
+    .text{width: 80%;}
+    #footer{display: block;}
+    .f_menu{text-align: right;}
+    
+    #sec01{
+        background: url("../img/NewJeans-Zero\(NMH\)-767x1360.jpg") center center / cover;
+    }
+    #sec02{
+        background: url("../img/02_Header\ Image\ 02-\(M\)-767x1360.png") center center / cover;
+    }
+    #sec03{
+        background: url("../img/coca-cola-bottles-\(MH\)-767x1360.png") center center / cover;
+    }
+    #sec04{
+        background: url("../img/04_Header\ Image\ 04-\(M\)-767x1360.png") center center / cover;
+    }
+
+    .sub_our{
+        position: fixed;
+        top:100px;
+        left: 0;
+        z-index: 1000;
+        background: #ccc;
+        width: 250px;
+        line-height: 60px;
+        padding-left: 20px;
+        display: none;
+    }
+}
